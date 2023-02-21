@@ -58,16 +58,18 @@ function App() {
         <h1>Score: {currentScore}</h1>
         <h1>highScore: {highScore}</h1>
       </div>
-      {cardArray.map((card) => (
-        <div
-          className="card"
-          key={card.name}
-          onClick={clickHandler}
-          id={card.name}
-        >
-          <h2>{card.name}</h2>
-        </div>
-      ))}
+      <div className="card-container">
+        {cardArray.map((card) => (
+          <div
+            className="card"
+            key={card.name}
+            onClick={clickHandler}
+            id={card.name}
+          >
+            <h2>{card.name}</h2>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
