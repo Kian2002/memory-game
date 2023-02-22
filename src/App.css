@@ -11,7 +11,6 @@
     display: flex;
     gap: 2rem;
     align-items: center;
-    animation: slideDown 1s ease-in-out;
     color: #FFF;
 }
 
@@ -31,7 +30,6 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    animation: slideIn 1s ease-in-out;
     color: #FFF;
 }
 
@@ -50,40 +48,9 @@
     margin: 7px;
     margin-bottom: 20px;
     user-select: none;
-    animation: slideUp 1s ease-in-out;
 }
 
 .card__name {
     font-size: 1.2rem;
     font-weight: bold;
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideDown {
-    0% {
-        transform: translateY(-100%);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideUp {
-    0% {
-        transform: translateY(100%);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
 }

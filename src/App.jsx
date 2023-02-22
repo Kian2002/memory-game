@@ -18,7 +18,10 @@ function App() {
   };
 
   const clickHandler = (e) => {
-    console.log(e.target.id);
+    if (currentScore === 20) {
+      alert("You Win!");
+    }
+
     if (clickedItems.find((foundItem) => foundItem === e.target.id)) {
       setClickedItems([]);
       setCurrentScore(0);

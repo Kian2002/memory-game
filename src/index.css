@@ -18,5 +18,8 @@ body {
     height: 100%;
     width: 100%;
     background: linear-gradient(45deg, #2c0e0e 0%, #1a6304 50%, #520d0d 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: 'get_schwiftyregular', Arial, Helvetica, sans-serif;
 }
