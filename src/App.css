@@ -13,20 +13,31 @@
 }
 
 .card-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
 }
 
 .card {
-    width: 300px;
-    height: 300px;
+    width: min-content;
+    height: 350px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.card__image {
+    max-width: 265px;
+    max-height: 265px;
+    border-radius: 15px;
+    margin: 7px;
+    margin-bottom: 20px;
+}
+
+.card__name {
+    font-size: 1.2rem;
+    font-weight: bold;
 }

@@ -3,15 +3,7 @@ import "./App.css";
 
 function App() {
   // STATE
-  const [cardArray, setCardArray] = useState([
-    { name: "A" },
-    { name: "B" },
-    { name: "C" },
-    { name: "D" },
-    { name: "E" },
-    { name: "F" },
-  ]);
-
+  const [cardArray, setCardArray] = useState([]);
   const [clickedItems, setClickedItems] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -26,6 +18,7 @@ function App() {
   };
 
   const clickHandler = (e) => {
+    console.log(e.target.id);
     if (clickedItems.find((foundItem) => foundItem === e.target.id)) {
       setClickedItems([]);
       setCurrentScore(0);
@@ -42,6 +35,17 @@ function App() {
     }
   };
 
+  // Get Data
+
+  useEffect(() => {
+    fetch("https://rickandmortyapi.com/api/character")
+      .then((res) => res.json())
+      .then((data) => {
+        setCardArray(data.results);
+      });
+    console.log(cardArray);
+  }, []);
+
   // activates shuffle
 
   useEffect(() => {
@@ -49,7 +53,6 @@ function App() {
       shuffleArray(prevCardArray);
       return [...prevCardArray];
     });
-    console.log(clickedItems);
   }, [clickedItems]);
 
   return (
@@ -62,11 +65,19 @@ function App() {
         {cardArray.map((card) => (
           <div
             className="card"
-            key={card.name}
+            key={card.id}
             onClick={clickHandler}
-            id={card.name}
+            id={card.id}
           >
-            <h2>{card.name}</h2>
+            <img
+              className="card__image"
+              src={card.image}
+              alt="image of character"
+              id={card.id}
+            />
+            <span id={card.id} className="card__name">
+              {card.name}
+            </span>
           </div>
         ))}
       </div>

@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'get_schwiftyregular';
+    src: url('../src/assets/Rick-and-Morty-Font/get_schwifty-webfont.woff2') format('woff2'),
+        url('../src/assets/Rick-and-Morty-Font/get_schwifty-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,4 +17,5 @@ html,
 body {
     height: 100%;
     background-color: thistle;
+    font-family: 'get_schwiftyregular', Arial, Helvetica, sans-serif;
 }
